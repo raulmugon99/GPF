@@ -1,0 +1,46 @@
+<ion-content fullscreen="true">
+  <ion-button fill="clear" [routerLink]="['/login/correo']" routerDirection="back" class="btn-atras">
+    <ion-icon name="chevron-back" slot="icon-only"></ion-icon>
+  </ion-button>
+
+  <div class="ion-text-center fadeInDown">
+    <h1 style="font-family: Lato; margin-top: 0px;">
+      <b>
+        Iniciar Sesión
+      </b>
+    </h1>
+  </div>
+  <div class="ion-text-center fadeInDown">
+    <ion-icon name="gift" class="icono"></ion-icon>
+  </div>
+  <div class="ion-text-center fadeInDown">
+    <h1 class="ion-no-margin">
+      <b>
+        GiftParty App
+      </b>
+    </h1>
+    <p class="ion-no-margin">
+      Tu gestor de eventos.
+    </p>
+  </div>
+
+  <div class="ion-text-center" class="ion-padding">
+    <ion-input type="email" #correo class="fadeIn fadeIn.first">
+      <ion-icon name="mail" slot="icon-only"></ion-icon>
+    </ion-input>
+    <ion-input type="password" #clave class="fadeIn fadeIn.first">
+      <ion-icon name="lock-closed" slot="icon-only"></ion-icon>
+    </ion-input>
+    <ion-button  expand="block" class="btn-iniciar-sesion fadeIn fadeIn.first" (click)="iniciarSesion(correo.value, clave.value)" mode="ios">
+      Iniciar Sesión
+    </ion-button>
+  </div>
+
+  <div class="ion-text-center">
+    <h5>Versión 1.1.0</h5>
+  </div>
+  
+</ion-content>
+
+
+

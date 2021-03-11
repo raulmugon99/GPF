@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" (click)="cerrarModal()">Salir</ion-button>
+    <ion-title> {{this.producto.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts" id="slide">
+    <ion-slide>
+      <img [src]="this.producto.imagen1" alt="">
+    </ion-slide>
+    <ion-slide *ngIf="this.producto.imagen2">
+      <img [src]="this.producto.imagen2" alt="">
+    </ion-slide>
+    <ion-slide *ngIf="this.producto.imagen3">
+      <img [src]="this.producto.imagen3" alt="">
+    </ion-slide>
+  </ion-slides>
+
+
+  <div class="ion-padding">
+    <h5 class="titulo">
+      Nombre
+    </h5>
+    <h5 class="campo">
+      {{this.producto.nombre}}
+    </h5>
+    <h5  class="titulo">
+      Precio
+    </h5>
+    <h5 class="campo">
+      {{this.producto.precio}}€
+    </h5>
+    <h5 class="titulo" *ngIf="this.producto.descripcion">
+      Descripción
+    </h5>
+    <p class="campo">
+      {{this.producto.descripcion}}
+    </p>
+    <ion-button *ngIf="this.producto.link" [href]="this.producto.link" expand="block" target="_blank">Visitar enlace</ion-button>
+  </div>
+  <!-- <ion-item>
+    <ion-label>Evento</ion-label>
+    <ion-select okText="Aceptar" cancelText="Cancelar" #hola>
+      <ion-select-option *ngFor="let evento of eventosActivos" [value]="evento.idEvento">{{evento.nombreEvento}}</ion-select-option>
+    </ion-select>
+  </ion-item> -->
+
+</ion-content>
+<ion-footer class="ion-no-padding ion-no-margin" >
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">  <ion-button expand="block" (click)="test()"  class="ion-no-padding ion-no-margin">
+        <ion-icon name="duplicate-outline" slot="start"></ion-icon>
+        Asignar</ion-button></ion-col>
+        <ion-col size="6">  <ion-button expand="block" color="danger" (click)="borrarProducto()" class="ion-no-padding ion-no-margin">
+          <ion-icon slot="start" name="trash"></ion-icon>
+          Borrar</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-footer>

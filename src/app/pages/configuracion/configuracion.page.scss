@@ -1,0 +1,36 @@
+ion-item {
+    padding: 12px;
+    ion-label {
+        font-weight: bold;
+        color: rgb(122, 122, 122);
+        font-size: 21px;
+    }
+    ion-icon {
+        font-size: 25px;
+        font-weight: bold;
+        color: rgb(122, 122, 122);
+    }
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.center {
+    width: 100%;
+    margin: 0 auto;
+}
+
+// .bg-orange {
+//     --background: #FFC3A0;
+//     margin: 0px 20px 0px 20px;
+// }
+// .text-orange{
+//     color: #FFC3A0;
+//     --color: #FFC3A0;
+// }
+
+// *{
+//     background-color: #F2F7F2;
+//     --background:#F2F7F2;
+// }

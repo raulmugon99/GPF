@@ -1,0 +1,26 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="inicio" class="primero">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="eventos-unidos-activos">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <ion-label>Eventos</ion-label>
+      <ion-badge *ngIf="this.eventos.length>0">{{this.eventos.length}}</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notificaciones">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-label>Notificaciones</ion-label>
+      <ion-badge *ngIf="this.notificacionesService.notificaciones.length>0" color="danger">{{this.notificacionesService.notificaciones.length}}</ion-badge>
+    </ion-tab-button>
+    <ion-tab-button tab="lista-deseos" class="ultimo">
+      <ion-icon name="gift-outline"></ion-icon>
+      <ion-label>Lista de deseos</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

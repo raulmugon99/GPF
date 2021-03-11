@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GiftParty</string>
+    <string name="title_activity_main">GiftParty</string>
+    <string name="package_name">es.rmg99.giftparty</string>
+    <string name="custom_url_scheme">es.rmg99.giftparty</string>
+    <string name="facebook_app_id">132289775197297</string>
+    <string name="fb_login_protocol_scheme">fb132289775197297</string>
+    <string name="admob_app_id">ca-app-pub-6581604974415927~5934469299</string>
+</resources>

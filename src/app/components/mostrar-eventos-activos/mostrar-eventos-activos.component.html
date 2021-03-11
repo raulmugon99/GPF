@@ -1,0 +1,13 @@
+<ion-header class="ion-no-border ion-text-center" style="height: 50px;">
+      <ion-icon name="remove" size="large"></ion-icon>
+</ion-header>
+<ion-content>
+  <ion-list lines="full">
+    <ion-item  *ngFor="let evento of this.EventosActivosUsuario; let i= index">
+      <ion-label slot="start">{{evento.nombreEvento}}</ion-label>
+      <ion-button *ngIf="!this.eventosAsignados.includes(i)" expand="block" slot="end" (click)="test(evento,i)">Asignar</ion-button>
+      <ion-button color="danger" fill="outline" *ngIf="this.eventosAsignados.includes(i)" expand="block" slot="end">Asignado</ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

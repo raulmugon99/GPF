@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1063951960415",
+    "firebase_url": "https://giftparty-99-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "giftparty-99",
+    "storage_bucket": "giftparty-99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063951960415:android:2172b22b85a3328d50ceea",
+        "android_client_info": {
+          "package_name": "es.rmg99.giftparty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063951960415-qk4elnjoanb5fnuv18obnqa1nqv4685c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "es.rmg99.giftparty",
+            "certificate_hash": "05759e151aa824ed7becf47308afa654522ef98e"
+          }
+        },
+        {
+          "client_id": "1063951960415-d9co1qorn8ie6a6af37i5de3fmi997oc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHKqxfpmzRufBb-zziRArGRBkRGyyAr9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063951960415-d9co1qorn8ie6a6af37i5de3fmi997oc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1063951960415-fkoarn3uhqsmdi0a21095fk1430aue6t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.raulmu99.giftparty"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,44 @@
+<ion-menu side="start" menuId="first" contentId="main" disabled="true">
+  <ion-content id="main">
+    <div class="menu-header-bg"></div>
+
+    <div class="header-content">
+      <img [src]="authService.userData | imagenes" alt="">
+      <ion-label>
+        <h2 *ngIf="authService.userData">{{authService.userData.displayName}}</h2>
+        <p *ngIf="authService.userData">{{authService.userData.email}}</p>
+      </ion-label>
+    </div>
+
+    <div class="action-button">
+      <ion-button (click)="crear()"><ion-icon slot="start" name="add"></ion-icon>Nuevo Evento</ion-button>
+    </div>
+
+    <ion-list lines="none" class="menu-list">
+      <ion-item [routerLink]="['/tabs/inicio']" routerLinkActive="active" detail="false" (click)="cerrarMenu()">
+        <ion-icon name="pie-chart-outline"></ion-icon>
+        Inicio
+      </ion-item>
+      <ion-item [routerLink]="['/tabs/lista-deseos']" routerLinkActive="active" detail="false" (click)="cerrarMenu()">
+        <ion-icon name="gift"></ion-icon>
+        Lista de deseos
+      </ion-item>
+      <ion-item [routerLink]="['/mostrar-mis-eventos']" routerLinkActive="active" detail="false" (click)="cerrarMenu()">
+        <ion-icon name="flash"></ion-icon>
+        Mis Eventos
+      </ion-item>
+      <ion-item [routerLink]="['/tabs/notificaciones']" routerLinkActive="active" detail="false" (click)="cerrarMenu()">
+        <ion-icon name="chatbubble-ellipses-outline" ></ion-icon>
+        Notificaciones
+      </ion-item>
+      <ion-item (click)="abrirConfiguracion()">
+        <ion-icon name="cog-outline"></ion-icon>
+        Configuración
+      </ion-item>
+      <ion-item  (click)="cerrarSesion()">
+        <ion-icon name="exit-outline"></ion-icon>
+        Cerrar Sesión
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

@@ -1,0 +1,61 @@
+.productos {
+    box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+}
+.img {
+    margin: 10px;
+}
+ion-slides {
+    height:160px;
+    margin: 20px;
+}
+.centrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.error {
+    background-color: rgba(255, 147, 147, 0.445);
+}
+ion-slide{
+    border: 1px solid rgb(131, 131, 131);
+    border-radius: 25px;
+
+}
+ion-img {
+    overflow: hidden;
+  }
+.redondear{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit:cover !important; 
+    object-position:center !important;
+    border-radius: 25px !important;
+}
+
+h5 {
+    margin: 0px;
+    display: inline;
+    font-size: 22px;
+}
+.precio {
+	color: mediumorchid;
+	font-size: 15px;
+	font-weight: bold;
+}
+ion-icon {
+    font-size: 24px;
+  }
+  .inp {
+    margin-top: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 12px;
+    --padding-start: 12px;
+    --placeholder-color: rgb(240, 240, 240);//currentColor
+}
+.margin-col {
+    padding-left: 16px; padding-right: 16px;
+    margin-bottom: 15px;
+  }

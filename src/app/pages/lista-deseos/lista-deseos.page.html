@@ -1,0 +1,35 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarPantallaCreacionProducto()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Lista de deseos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item *ngFor="let producto of productos" (click)="mostrarProducto(producto)">
+    <ion-thumbnail slot="start" style="margin-top: 16px;margin-bottom: 16px;">
+      <img [src]="producto.imagen1">
+    </ion-thumbnail>
+    <ion-label>
+      <h2 class="nombreProducto">
+        {{producto.nombre}}
+      </h2>
+      <!-- <p>dolor sit amet</p> -->
+      <p>{{producto.descripcion}}</p>
+      <h5 slot="end">
+        {{producto.precio}}€
+      </h5>
+    </ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>

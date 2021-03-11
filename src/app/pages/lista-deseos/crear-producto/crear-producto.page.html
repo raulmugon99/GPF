@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" (click)="cerrarModal()">Salir</ion-button>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding" >
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12" >
+        <ion-slides [options]="slideOpts" id="slide"  *ngIf="mostrarSlide">
+          <ion-slide [ngClass]="{'error': this.errores.imagen}">
+            <div class="ion-align-items-center centrar" *ngIf="!imagen1 && !subiendoImagen1" (click)="takePicture('1')">
+              <ion-icon name="camera-outline" slot="icon-only" size="large"></ion-icon>
+            </div>
+            <div class="ion-align-items-center centrar" *ngIf="subiendoImagen1">
+              <ion-spinner name="crescent"></ion-spinner>
+            </div>
+            <ion-img *ngIf="imagen1" [src]="imagen1" alt="" class="redondear"></ion-img>
+          </ion-slide>
+          <ion-slide>
+            <div class="ion-align-items-center centrar" *ngIf="!imagen2  && !subiendoImagen2" (click)="takePicture('2')">
+              <ion-icon name="camera-outline" slot="icon-only" size="large"></ion-icon>
+            </div>
+            <div class="ion-align-items-center centrar" *ngIf="subiendoImagen2">
+              <ion-spinner name="crescent"></ion-spinner>
+            </div>
+            <ion-img *ngIf="imagen2" [src]="imagen2" alt="" class="redondear"></ion-img>
+          </ion-slide>
+          <ion-slide>
+            <div class="ion-align-items-center centrar" *ngIf="!imagen3  && !subiendoImagen3" (click)="takePicture('3')">
+              <ion-icon name="camera-outline" slot="icon-only" size="large"></ion-icon>
+            </div>
+            <div class="ion-align-items-center centrar" *ngIf="subiendoImagen3">
+              <ion-spinner name="crescent"></ion-spinner>
+            </div>
+            <ion-img *ngIf="imagen3" [src]="imagen3" alt="" class="redondear"></ion-img>
+          </ion-slide>
+        </ion-slides>
+        <!-- <ion-img #imagen [src]="imagen" id="imagen" style="width: 100%; height: 200px; border-radius: 10px; border: 1px solid black;"></ion-img> -->
+      </ion-col>
+      <ion-col size="12" class="margin-col">
+        <ion-label>Nombre</ion-label>
+        <small style="color: red;" *ngIf="errores.nombre"> *Obligatorio</small>
+        <ion-input class="inp" type="text" #nombre id="inombre" ></ion-input> 
+      </ion-col>
+      <ion-col size="12" class="margin-col">
+        <ion-label>Precio</ion-label>
+        <small style="color: red;" *ngIf="errores.precio"> *Obligatorio</small>
+        <ion-input class="inp" type="text" #precio id="iprecio"></ion-input> 
+      </ion-col>
+      <ion-col size="12" class="margin-col">
+        <ion-label>Link</ion-label>
+        <small style="color: red;" *ngIf="errores.link"> *Obligatorio</small>
+        <ion-input class="inp" type="text" #link></ion-input> 
+      </ion-col>
+      <ion-col size="12" class="margin-col">
+        <ion-label>Descripcion</ion-label>
+        <ion-textarea class="inp" #descripcion></ion-textarea> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button expand="block" (click)="guardarProducto(nombre.value, precio.value, link.value, descripcion.value)">Agregar a la lista</ion-button>
+</ion-content>

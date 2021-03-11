@@ -1,0 +1,68 @@
+<ion-content fullscreen="true">
+  <ion-button fill="clear" [routerLink]="['/login/correo']" routerDirection="back" class="btn-atras">
+    <ion-icon name="chevron-back" slot="icon-only"></ion-icon>
+  </ion-button>
+
+  <div class="ion-text-center fadeInDown">
+    <h1 style="font-family: Lato; margin-top: 0px;">
+      <b>
+        Crear cuenta
+      </b>
+    </h1>
+  </div>
+
+<div class="imagen1">
+  <div class="imagen2 ion-text-center" (click)="seleccionarImagen()" *ngIf="this.imagenUsuario === 'assets/img/img1.png' && !cargando">
+    <ion-icon name="camera-outline" slot="icon-only" size="large" class="icono-imagen"></ion-icon>
+  </div>
+    <ion-spinner class="loading" name="crescent" *ngIf="cargando"></ion-spinner>
+  <img class="imagenDespues" [src]="this.imagenUsuario" alt="" *ngIf="this.imagenUsuario != 'assets/img/img1.png' && !cargando">
+</div>
+
+
+  <!-- <div class="ion-text-center fadeInDown">
+    <ion-icon name="gift" class="icono"></ion-icon>
+  </div>
+  <div class="ion-text-center fadeInDown">
+    <h1 class="ion-no-margin">
+      <b>
+        GiftParty App
+      </b>
+    </h1>
+    <p class="ion-no-margin">
+      Tu gestor de eventos.
+    </p>
+  </div> -->
+
+  <div class="ion-text-center" class="ion-padding">
+    <ion-input type="text" #usuario class="fadeIn fadeIn.first">
+      <ion-icon name="person" slot="icon-only"></ion-icon>
+    </ion-input>
+    <ion-input type="text" #correo class="fadeIn fadeIn.second">
+      <ion-icon name="mail" slot="icon-only"></ion-icon>
+    </ion-input>
+    <ion-input type="password" #clave class="fadeIn fadeIn.third">
+      <ion-icon name="lock-closed" slot="icon-only"></ion-icon>
+    </ion-input>
+    <ion-button expand="block" class="btn-iniciar-sesion fadeIn  fadeIn.fourth" (click)="registrarse(usuario.value,correo.value, clave.value)"  mode="ios">
+      Registrarse
+    </ion-button>
+  </div>
+
+
+
+  <!-- <div class="ion-text-center ion-padding footer fadeInDown">
+ 
+  </div> -->
+
+
+<div class="ion-text-center ion-padding" >
+  <p>
+    Al registrarte, estás aceptando los <a color="danger"> Terminos de servicio</a> y <a>Politica de privacidad</a> de GiftParty.
+  </p>
+  <!-- <h5 style="font-weight: bold;">
+      Version 1.0.0
+  </h5> -->
+</div>
+
+  </ion-content>

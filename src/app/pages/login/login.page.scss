@@ -1,0 +1,47 @@
+.icono {
+    font-size: 164px !important;
+}
+
+ .icono {
+    color: rgb(150, 209, 219) !important;
+}
+
+.boton {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    ion-icon {
+        position: absolute; left: 0px;
+    }
+}
+
+.facebook {
+    background: #3b5998;
+    --background: #3b5998;
+}
+.google {
+    background: #EA4335;
+    --background: #EA4335;
+}
+.apple {
+    background: white;
+    --background: white;
+    border: 2px solid black;
+    color: black;
+}
+.correo {
+    --background: white;
+    color: rgb(150, 209, 219) !important;
+    *{
+        color: rgb(150, 209, 219) !important;
+    }
+    border: 2px solid rgb(150, 209, 219) !important;
+}
+a {
+    color: rgb(150, 209, 219) !important;
+}
+
+ion-content {
+    --background: rgb(243, 243, 243) !important;
+}
+
+

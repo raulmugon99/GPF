@@ -1,0 +1,45 @@
+<ion-content slot="fixed">
+
+  <div class="ion-text-center fadeInDown" style="margin-top:15%;">
+    <ion-icon name="gift" class="icono"></ion-icon>
+  </div>
+  <div class="ion-text-center fadeInDown">
+    <h1 class="ion-no-margin">
+      <b>
+        GiftParty App
+      </b>
+    </h1>
+    <p class="ion-no-margin">
+      Tu gestor de eventos.
+    </p>
+  </div>
+
+  <div class="ion-text-center" class="ion-padding">
+
+
+    <ion-button class="boton facebook fadeIn fadeIn.first " expand="block"mode="ios" (click)="iniciarSesionConFacebook()">
+      <ion-icon name="logo-facebook" slot="start"></ion-icon>
+      Continuar con Facebook
+    </ion-button>
+    <ion-button class="boton google  fadeIn fadeIn.second" expand="block"mode="ios" (click)="iniciarSesionConGoogle()">
+      <ion-icon name="logo-google" slot="start"></ion-icon>
+      Continuar con Google
+    </ion-button>    
+    <ion-button class="boton apple fadeIn fadeIn.third" expand="block"mode="ios">
+      <ion-icon name="logo-apple" slot="start"></ion-icon>
+      Continuar con Apple
+    </ion-button>    
+    <ion-button class="boton correo fadeIn  fadeIn.fourth" expand="block" [routerLink]="['./correo']" routerDirection="root" mode="ios">
+      <ion-icon name="mail" slot="start"></ion-icon>
+      Continuar con correo
+    </ion-button>
+  </div>
+
+
+  <div class="ion-text-center ion-padding">
+    <p class="fadeInDown">
+      Al presionar cualquiera de las opciones de arriba, aceptas los <a color="danger"> Terminos de servicio</a> y <a>Politica de privacidad</a> de GiftParty.
+    </p>
+  </div>
+</ion-content>
+

@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" (click)="cerrarModal()">Salir</ion-button>
+    <ion-title>Productos</ion-title>
+    <ion-button slot="end" fill="outline" *ngIf="productosAnadidos.length>0" (click)="terminar()">Terminar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12" >
+        <ion-slides [options]="slideOpts" id="slide">
+          <ion-slide [ngClass]="{'error': this.errores.imagen}">
+            <div class="ion-align-items-center centrar" *ngIf="!imagen1 && !subiendoImagen1" (click)="takePicture('1')">
+              <ion-icon name="camera-outline" slot="icon-only" size="large"></ion-icon>
+            </div>
+            <div class="ion-align-items-center centrar" *ngIf="subiendoImagen1">
+              <ion-spinner name="crescent"></ion-spinner>
+            </div>
+            <ion-img *ngIf="imagen1" [src]="imagen1" alt="" class="redondear"></ion-img>
+          </ion-slide>
+          <ion-slide>
+            <div class="ion-align-items-center centrar" *ngIf="!imagen2  && !subiendoImagen2" (click)="takePicture('2')">
+              <ion-icon name="camera-outline" slot="icon-only" size="large"></ion-icon>
+            </div>
+            <div class="ion-align-items-center centrar" *ngIf="subiendoImagen2">
+              <ion-spinner name="crescent"></ion-spinner>
+            </div>
+            <ion-img *ngIf="imagen2" [src]="imagen2" alt="" class="redondear"></ion-img>
+          </ion-slide>
+          <ion-slide>
+            <div class="ion-align-items-center centrar" *ngIf="!imagen3  && !subiendoImagen3" (click)="takePicture('3')">
+              <ion-icon name="camera-outline" slot="icon-only" size="large"></ion-icon>
+            </div>
+            <div class="ion-align-items-center centrar" *ngIf="subiendoImagen3">
+              <ion-spinner name="crescent"></ion-spinner>
+            </div>
+            <ion-img *ngIf="imagen3" [src]="imagen3" alt="" class="redondear"></ion-img>
+          </ion-slide>
+        </ion-slides>
+        <!-- <ion-img #imagen [src]="imagen" id="imagen" style="width: 100%; height: 200px; border-radius: 10px; border: 1px solid black;"></ion-img> -->
+      </ion-col>
+      <ion-col size="12" class="margin-col">
+        <ion-label>Nombre</ion-label>
+        <small style="color: red;" *ngIf="errores.nombre"> *Obligatorio</small>
+        <ion-input class="inp" type="text" #nombre id="inombre" placeholder="Introduce el nombre del producto"></ion-input> 
+      </ion-col>
+      <ion-col size="12" class="margin-col">
+        <ion-label>Precio</ion-label>
+        <small style="color: red;" *ngIf="errores.precio"> *Obligatorio</small>
+        <ion-input class="inp" type="text" #precio id="iprecio" placeholder="Introduce el precio del producto (€)"></ion-input> 
+      </ion-col>
+      <ion-col size="12" class="margin-col">
+        <ion-label>Link</ion-label>
+        <small style="color: red;" *ngIf="errores.link"> *Obligatorio</small>
+        <ion-input class="inp" type="text" #link id="ilink"placeholder="Introduce el URL de la web del producto"></ion-input> 
+      </ion-col>
+      <ion-col size="12" class="margin-col">
+        <ion-label>Descripcion</ion-label>
+        <ion-textarea class="inp" #descripcion id="idesc" placeholder="Introduce la descripcion del producto"></ion-textarea> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button expand="block" (click)="guardarProducto(nombre.value, precio.value, link.value, descripcion.value)" [disabled]="productosAnadidos.length === 6">Añadir</ion-button>
+<div style="border-bottom: 1px solid black; margin-top:15px;">
+  <h5 style="display: inline; padding-left: 3px;">Productos añadidos ({{productosAnadidos.length}}/6)</h5>
+  <ion-icon style="float: right; display: inline;" name="information-circle-outline" slot="icon-only"></ion-icon>
+</div>
+
+
+
+
+
+  <ion-grid style="min-height: 200px;">
+    <ion-row style="margin-bottom: 100px;">
+      <ion-col size="6" *ngFor="let p of productosAnadidos" >
+        <div class="productos" (click)="pagina(p.link)">
+          <ion-img class="img" [src]="p.imagen1" alt=""></ion-img> 
+          <ion-label>
+            <p class="ion-no-margin ion-text-center"> {{p.nombre}} </p>
+  
+            <div class="ion-text-center" style="padding-bottom:10px;">
+              <h5 class="precio">{{p.precio}}€</h5>  
+            </div>
+          </ion-label>
+
+        </div>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

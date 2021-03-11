@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" (click)="cerrarModal()">Cancelar</ion-button>
+    <ion-title>Nuevo Evento</ion-title>
+    <ion-button fill="outline" slot="end" color="success" (click)="crearEvento(nombre.value,fechaHasta, privacidadObject,number.value,cant.value)">Crear</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+  
+<ion-content class="color">
+  <ion-list lines="none" class="lato">
+    <ion-list-header class="color">
+      <ion-label style="margin-top: 0px;">Nombre
+        <ion-icon name="information-circle-outline" (click)="mostrarInfo($event, 1)"></ion-icon>
+      </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input #nombre type="text" placeholder="Introduce el nombre del evento" clearInput autocapitalize autocomplete autocorrect></ion-input>
+      <small color="danger" *ngIf="errores.nombre">*Obligatorio</small>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-list-header  class="color lato">
+      <ion-label>Privacidad
+        <ion-icon name="information-circle-outline" (click)="mostrarInfo($event, 2)"></ion-icon>
+      </ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of privacidadObject">
+      <ion-label>
+        <ion-text [color]="item.color">{{item.val}}</ion-text>
+        <p class="desc-priv lato">{{item.des}}</p>
+      </ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="item.isChecked" (click)="cambioCheck(item)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+
+
+  <ion-list >
+    <ion-list-header class="color lato">
+      <ion-label>Calendario
+        <ion-icon name="information-circle-outline" (click)="mostrarInfo($event, 3)"></ion-icon>
+      </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input class="lato" type="date" #fechaHasta id="idate"  ></ion-input>
+      <small color="danger" *ngIf="errores.fecha">*La fecha debe ser mayor a hoy.</small>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header class="color lato">
+      <ion-label>Participantes
+        <ion-icon name="information-circle-outline" (click)="mostrarInfo($event, 4)"></ion-icon>
+      </ion-label>
+    </ion-list-header>
+    <ion-item lines="none">
+      <ion-label slot="start" class="label-cant">Numero de personas</ion-label>
+      <ion-icon name="add-circle-outline" slot="end"  class="icon-cantidad" (click)="number.value = cambiarCantidad(number.value, true, 'persona')"></ion-icon>
+      <ion-input readonly type="number"  slot="end" #number class="ion-no-padding ion-text-center icon-cantidad" value="1" min="1" [max]="this.configuracionService.configuracion.numPersonas"></ion-input>
+      <ion-icon name="remove-circle-outline" slot="end" class="icon-cantidad" (click)="number.value = cambiarCantidad(number.value, false, 'persona')"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header class="color lato">
+      <ion-label>Regalos por persona
+        <ion-icon name="information-circle-outline" (click)="mostrarInfo($event, 5)"></ion-icon>
+      </ion-label>
+    </ion-list-header>
+    <ion-item lines="none">
+      <ion-label slot="start" class="label-cant">Cantidad por persona</ion-label>
+      <ion-icon name="add-circle-outline" slot="end"  class="icon-cantidad" (click)="cant.value = cambiarCantidad(cant.value, true, 'regalo')"></ion-icon>
+      <ion-input readonly type="number"  slot="end" #cant class="ion-no-padding ion-text-center icon-cantidad" value="1" min="1" [max]="this.configuracionService.configuracion.numRegalos"></ion-input>
+      <ion-icon name="remove-circle-outline" slot="end" class="icon-cantidad" (click)="cant.value = cambiarCantidad(cant.value, false, 'regalo')"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-button expand="full" (click)="crearEvento(nombre.value,fechaHasta, privacidadObject,number.value,cant.value)">Terminar</ion-button> -->
+</ion-content>

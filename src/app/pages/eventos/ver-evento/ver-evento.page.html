@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="/" slot="start" text="Atras"></ion-back-button>
+    <ion-title>{{evento.nombreEvento}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="carta ion-text-center">
+    <h1 class="nombreEvento">{{evento.nombreEvento}}</h1>
+    <ion-item color="light" style="border-radius: 15px;">
+      <h5 style="font-weight: bolder; margin-top: 10px !important;">
+        {{evento.idEvento}}
+      </h5>
+      <ion-button slot="end" fill="clear" class="code-icons" (click)="copiarCodigoClipboard()">
+        <ion-icon name="clipboard-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" fill="clear" class="code-icons" (click)="mostrarCodigo()">
+        <ion-icon name="barcode-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-item>
+  
+    <!-- <div style="text-align: right;">
+      <ion-item lines="none">
+        <ion-button (click)="compartirEvento()" fill="clear">
+          <ion-icon name="share" color="light" slot="icon-only"></ion-icon>
+        </ion-button>
+          <h5 style="color: white; font-weight: bold;" slot="end">
+            {{evento.fechacreacion | timeago}}
+          </h5>
+      </ion-item>
+    </div> -->
+
+    <div class="ion-text-left">
+      <h5 style="font-weight: bolder;">Termina en... </h5>
+    </div>
+
+    <!-- <lib-angular-countdown-dateTime [endDateBind]="evento.fechaHasta" [dayText]="'Dias'" [hourText]="'Horas'" [minutesText]="'Minutos'" [secondsText]="'Segundos'"> </lib-angular-countdown-dateTime> -->
+  <br>
+  </div>
+
+<ion-button fill="outline" expand="block" (click)="crearProducto(this.evento.idEvento)">
+  Añadir producto
+</ion-button>
+<ion-list>
+  <ion-item *ngFor="let producto of productosEvento" (click)="mostrarProducto(producto)">
+    <ion-thumbnail slot="start" style="margin-top: 16px;margin-bottom: 16px;">
+      <img [src]="producto.imagen1">
+    </ion-thumbnail>
+    <ion-label>
+      <h2 class="nombreProducto">
+        {{producto.nombre}}
+      </h2>
+      <!-- <p>dolor sit amet</p> -->
+      <p>{{producto.descripcion}}</p>
+      <h5 slot="end">
+        {{producto.precio}}€
+      </h5>
+    </ion-label>
+    
+  </ion-item>
+</ion-list>
+
+</ion-content>
+

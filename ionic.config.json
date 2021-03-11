@@ -1,0 +1,7 @@
+{
+  "name": "GPF",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
